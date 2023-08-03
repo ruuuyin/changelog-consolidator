@@ -83,8 +83,8 @@ generate_changelog(){
 
 # Hook entry point
 while read -r local_ref local_sha remote_ref remote_sha; do
-    if [ "$remote_ref" = "refs/heads/${release_branch}" ]; then
-        generate_changelog "$release_branch"
+    if [ "$remote_ref" = "refs/heads/${current_branch}" ]; then
+        generate_changelog
         break
     fi
 done
